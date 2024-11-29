@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('akreditasis', function (Blueprint $table) {
             $table->id('id_akreditasi');
+            $table->unsignedBigInteger('id_dokumen');
             $table->unsignedBigInteger('id_prodi');
             $table->string('no_sk_akreditasi');
             $table->unsignedBigInteger('id_jenisakreditasi');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('file')->nullable();
             $table->timestamps();
 
+            $table->foreign('id_dokumen')->references('id_dokumen')->on('dokumens')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_prodi')->references('id_prodi')->on('prodis')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_jenisakreditasi')->references('id_jenisakreditasi')->on('jenis_akreditasis')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_lembaga')->references('id_lembaga')->on('lembagas')->onDelete('cascade')->onUpdate('cascade');
