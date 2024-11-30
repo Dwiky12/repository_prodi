@@ -16,8 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_prodi');
             $table->string('nama_kurikulum');
             $table->year('tahun_pembelajaran');
-            $table->enum('semester_pemberlakuan', ['Ganjil', 'Genap', ''])->nullable();
-            $table->unsignedBigInteger('revisi_ke');
+            $table->enum('semester', ['Ganjil', 'Genap'])->nullable();            $table->unsignedBigInteger('revisi_ke');
             $table->string('file')->nullable();
             $table->timestamps();
 

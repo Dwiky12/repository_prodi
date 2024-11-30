@@ -16,9 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_prodi');
             $table->string('nama_jurnal');
             $table->year('tahun');
-            $table->enum('semester', ['Ganjil', 'Genap', ''])->nullable();
-            $table->enum('tingkat', ['Internasional', 'Terakreditasi', ''])->nullable();
-            $table->string('penerbit');
+            $table->enum('tingkat', ['Internasional', 'Terakreditasi'])->nullable();            $table->string('penerbit');
             $table->unsignedBigInteger('volume');
             $table->unsignedBigInteger('jumlah_eksemplar');
             $table->text('deskripsi');
